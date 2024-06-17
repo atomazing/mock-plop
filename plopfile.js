@@ -48,13 +48,13 @@ module.exports = function (plop) {
 			{
 				type: 'add',
 				skipIfExists: true,
-				path: 'src/store/api/{{camelCase name}}/{{camelCase name}}Api.ts',
+				path: 'src/api/{{camelCase name}}/{{camelCase name}}Api.ts',
 				templateFile: 'src/templates/api/api.ts',
 			},
 			{
 				type: 'add',
 				skipIfExists: true,
-				path: 'src/store/api/{{camelCase name}}/index.ts',
+				path: 'src/api/{{camelCase name}}/index.ts',
 				templateFile: 'src/templates/api/index.ts',
 			},
 			{
