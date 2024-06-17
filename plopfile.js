@@ -73,7 +73,7 @@ module.exports = function (plop) {
 				type: 'modify',
 				path: path.join(projectBaseDir, 'src/store/store.ts'),
 				pattern: /(\/\/ IMPORT API)/g,
-				template: "$1\nimport { {{camelCase name}}Api } from '@store/api/{{camelCase name}}'",
+				template: "$1\nimport { {{camelCase name}}Api } from '@api/{{camelCase name}}'",
 			},
 			{
 				type: 'modify',

@@ -14,7 +14,7 @@ The `@atomazing-org/mock-plop` library is a configuration script designed for Pl
 ### Generation of API and Mock
 
 - For every new API model introduced via the command-line interface, the script generates a suite of files across several directories:
-    - `src/store/api`: Defines the API.
+    - `src/api`: Defines the API.
     - `src/models`: Contains the data model.
     - `src/mocks/handlers/mock{properCase name}`: Includes mock data and handlers for testing purposes.
 - It also modifies existing files, such as adding imports and exports to `src/models/index.ts` and `src/store/store.ts`.
