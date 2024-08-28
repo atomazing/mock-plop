@@ -93,7 +93,7 @@ module.exports = function (plop) {
 			{
 				type: 'add',
 				skipIfExists: true,
-				path: 'src/models/index.ts',
+				path: path.join(projectBaseDir, 'src/models/index.ts'),
 				templateFile: 'src/templates/models/index.ts',
 			},
 			{
