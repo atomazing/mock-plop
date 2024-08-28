@@ -91,6 +91,12 @@ module.exports = function (plop) {
 				templateFile: 'src/templates/models/model.ts',
 			},
 			{
+				type: 'add',
+				skipIfExists: true,
+				path: 'src/models/index.ts',
+				templateFile: 'src/templates/models/index.ts',
+			},
+			{
 				type: 'modify',
 				path: path.join(projectBaseDir, 'src/models/index.ts'),
 				pattern: /(\/\/ MODEL EXPORTS)/g,
