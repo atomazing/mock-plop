@@ -1,1 +1,1 @@
-export { {{ camelCase name }}Api } from './{{ camelCase name }}Api'
+export * from './{{ camelCase name }}Api'

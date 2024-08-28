@@ -24,6 +24,33 @@ module.exports = function (plop) {
 			},
 		],
 	})
+	plop.setGenerator('init api+store packages', {
+		description: 'generates an packages for api and store',
+		prompts: [],
+		actions: [
+			{
+				type: 'add',
+				skipIfExists: true,
+				// Dynamically construct the path using path.join
+				path: path.join(projectBaseDir, 'src/api/baseApi.ts'),
+				templateFile: 'src/templates/api/baseApi.ts',
+			},
+			{
+				type: 'add',
+				skipIfExists: true,
+				// Dynamically construct the path using path.join
+				path: path.join(projectBaseDir, 'src/api/rtkQueryHandler.ts'),
+				templateFile: 'src/templates/api/rtkQueryHandler.ts',
+			},
+			{
+				type: 'add',
+				skipIfExists: true,
+				// Dynamically construct the path using path.join
+				path: path.join(projectBaseDir, 'src/store/store.ts'),
+				templateFile: 'src/templates/store/store.ts',
+			},
+		],
+	})
 	plop.setGenerator('api + mock', {
 		description: 'generates an api and mock',
 		prompts: [
@@ -68,18 +95,6 @@ module.exports = function (plop) {
 				path: path.join(projectBaseDir, 'src/models/index.ts'),
 				pattern: /(\/\/ MODEL EXPORTS)/g,
 				template: "$1\nexport type { {{properCase name}} } from './{{properCase name}}'",
-			},
-			{
-				type: 'modify',
-				path: path.join(projectBaseDir, 'src/store/store.ts'),
-				pattern: /(\/\/ IMPORT API)/g,
-				template: "$1\nimport { {{camelCase name}}Api } from '@api/{{camelCase name}}'",
-			},
-			{
-				type: 'modify',
-				path: path.join(projectBaseDir, 'src/store/store.ts'),
-				pattern: /(\/\/ INSERT API)/g,
-				template: '$1\n\t{{camelCase name}}Api,',
 			},
 			{
 				type: 'add',

@@ -1,13 +1,8 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
-import { root } from '@constants/paths'
+import { baseApi } from '@api/baseApi'
 
 import type { {{ properCase name }} } from '@models/{{ properCase name }}'
 
-export const {{ camelCase name }}Api = createApi({
-	baseQuery: fetchBaseQuery({ baseUrl: root }),
-	tagTypes: ['{{ properCase name }}'],
-	reducerPath: '{{ properCase name }}',
+export const {{ camelCase name }}Api = baseApi.injectEndpoints({
 	endpoints: builder => ({
 		get{{ properCase name }}: builder.query<{{ properCase name }}[], void>({
 			query: () => ({
