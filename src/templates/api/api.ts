@@ -2,7 +2,9 @@ import { baseApi } from '@api/baseApi'
 
 import type { {{ properCase name }} } from '@models/{{ properCase name }}'
 
-export const {{ camelCase name }}Api = baseApi.injectEndpoints({
+export const {{ camelCase name }}Api = baseApi
+	.enhanceEndpoints({addTagTypes: [{{ properCase name }}]})
+	.injectEndpoints({
 	endpoints: builder => ({
 		get{{ properCase name }}: builder.query<{{ properCase name }}[], void>({
 			query: () => ({
